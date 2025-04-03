@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen;
+  }
+}
+
+@layer components {
+  .tool-card {
+    @apply relative overflow-hidden bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100;
+  }
+
+  .tool-card::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent opacity-0 transition-opacity duration-300;
+  }
+
+  .tool-card:hover::before {
+    @apply opacity-100;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg border border-slate-200 bg-white focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-200;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg font-medium 
+           hover:from-blue-700 hover:to-blue-800 focus:ring-4 focus:ring-blue-500/20 
+           transition-all duration-200 shadow-sm hover:shadow disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-white text-slate-700 rounded-lg font-medium border border-slate-200
+           hover:bg-slate-50 focus:ring-4 focus:ring-slate-500/20 
+           transition-all duration-200 shadow-sm hover:shadow;
+  }
+
+  .card-container {
+    @apply bg-white rounded-xl shadow-sm border border-slate-100 p-8;
+  }
+
+  .tool-heading {
+    @apply text-3xl font-bold text-slate-800 mb-8;
+  }
+}
